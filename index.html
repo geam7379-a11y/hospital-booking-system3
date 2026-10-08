@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستشفى الشفاء التخصصي - نظام حجز المواعيد</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header class="main-header">
+        <div class="container">
+            <h1>مستشفى الشفاء التخصصي</h1>
+            <p>نقدم أفضل الرعاية الطبية بأحدث التقنيات وبإشراف نخبة من الأطباء</p>
+        </div>
+    </header>
+
+    <!-- الأقسام الطبية -->
+    <section class="departments-section container">
+        <h2>الأقسام الطبية المتاحة</h2>
+        <div class="departments-grid">
+            <div class="dept-card" onclick="selectDepartment('اطفال')">
+                <h3>قسم الأطفال</h3>
+                <p>رعاية متكاملة لصحة طفلك وتطعيمات ومتابعة دورية.</p>
+            </div>
+            <div class="dept-card" onclick="selectDepartment('باطنة')">
+                <h3>قسم الباطنة</h3>
+                <p>تشخيص وعلاج الأمراض المزمنة واضطرابات الجهاز الهضمي.</p>
+            </div>
+            <div class="dept-card" onclick="selectDepartment('عظام')">
+                <h3>قسم العظام</h3>
+                <p>علاج الإصابات الرياضية وآلام المفاصل والعمود الفقري.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الحجز -->
+    <section id="booking-section" class="booking-section container">
+        <h2>حجز موعد جديد</h2>
+        <form id="bookingForm" onsubmit="handleBooking(event)">
+            <div class="form-group">
+                <label for="patientName">اسم المريض:</label>
+                <input type="text" id="patientName" placeholder="أدخل اسم المريض ثلاثي">
+            </div>
+            
+            <div class="form-group">
+                <label for="patientAge">عمر المريض:</label>
+                <input type="number" id="patientAge" placeholder="أدخل عمر المريض بالسنوات">
+            </div>
+
+            <div class="form-group">
+                <label for="departmentSelect">القسم الطبي:</label>
+                <select id="departmentSelect">
+                    <option value="">اختر القسم الطبي</option>
+                    <option value="اطفال">قسم الأطفال</option>
+                    <option value="باطنة">قسم الباطنة</option>
+                    <option value="عظام">قسم العظام</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">تأكيد الحجز</button>
+        </form>
+        <div id="bookingMessage" class="message"></div>
+    </section>
+
+    <!-- تذييل الصفحة (Footer) مع اسمك -->
+    <footer style="text-align: center; padding: 25px; background-color: #f8f9fa; color: #555; margin-top: 40px; border-top: 1px solid #ddd; font-family: sans-serif;">
+        <p style="margin: 0; font-size: 15px;">
+            تم تطوير وبرمجة هذا الموقع بواسطة: <strong style="color: #2c3e50;">محمود أحمد</strong> &copy; 2026
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
